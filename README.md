@@ -81,7 +81,7 @@ Some OpenCV functions I have used for this project are:
 ## Build a Lane Finding Pipeline
 
 Using the following image as example, my pipeline consisted of 6 steps. 
-![alt text][image1]
+![alt text][https://github.com/liferlisiqi/Finding-Lane-Lines/blob/master/test_images_output/origin.jpg]
 
 1. Converted the images to grayscale from RGB model 
 ![alt text][image2]  
