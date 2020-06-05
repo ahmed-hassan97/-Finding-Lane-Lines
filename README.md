@@ -1,9 +1,9 @@
 # Finding-Lane-Lines
-```
-  first project in self driving car nanodegree on udacity
-```
----
+
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+
+---
+
 [//]: # (Image References)
 [image1]: ./test_images_output/origin.jpg "origin"
 [image2]: ./test_images_output/gray.jpg "gray"
