@@ -85,7 +85,7 @@ Some OpenCV functions I have used for this project are:
 
 ```
       # Tunable parameters (I will use values from quizzes)
-      kernel_size = 5       # Gaussian blur kernel size
+       kernel_size = 5       # Gaussian blur kernel size
       low_threshold = 40    # Canny low threshold for gradient value
       high_threshold = 130  # Canny high threshold for gradient value
       rho = 1               # distance resolution in pixels of the Hough grid
@@ -94,8 +94,7 @@ Some OpenCV functions I have used for this project are:
       min_line_length = 30 # minimum number of pixels making up a line
       max_line_gap = 300    # maximum gap in pixels between connectable line segments
 
-      # My region of interest will be a centered trapezoid rising from the bottom of the image.
-      # These parameters tune the shape of the trapezoid.
+    
       roi_horiz_top = 0.45 # x-coord of trapezoid's top left point will be img.shape[1]*roi_horiz_top
                           # x-coord of trapezoid's top right point will be img.shape[1]*(1.-roi_horiz_top)
       roi_horiz_bot = 0.05 # x-coord of trapezoid's bottom left point will be img.shape[1]*roi_horiz_bot
@@ -105,6 +104,7 @@ Some OpenCV functions I have used for this project are:
       # Parameters (channel value ratios) used to filter out everything that is far from white or yellow.  
       # From a quick plt.plot(test_image[400,:,:]), it's possible to discover the approximate range
       # of red/green and red/blue ratios that correspond to the yellow lane line: 
+      
       yellow_g2r_low = 0.75 
       yellow_g2r_high = 1.1
       yellow_b2r_low = 0.0
@@ -129,14 +129,18 @@ Using the following image as example, my pipeline consisted of 6 steps.
 
 1. Converted the images to grayscale from RGB model 
 ![alt text][image2]  
+
+
 ```
-        def grayscale(img):
-        """Applies the Grayscale transform
-        This will return an image with only one color channel
-        but NOTE: to see the returned image as grayscale
-        (assuming your grayscaled image is called 'gray')
-        you should call plt.imshow(gray, cmap='gray')"""
-        return cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+   def grayscale(img):
+        
+  """Applies the Grayscale transform
+  This will return an image with only one color channel
+  but NOTE: to see the returned image as grayscale
+  (assuming your grayscaled image is called 'gray')
+  you should call plt.imshow(gray, cmap='gray')"""
+        
+  return cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
    
 ```
 2. Use cv2.GaussianBlur() to blur the image
@@ -144,17 +148,22 @@ Using the following image as example, my pipeline consisted of 6 steps.
 
 ```
       def gaussian_blur(img, kernel_size):
+      
       """Applies a Gaussian Noise kernel"""
+      
       return cv2.GaussianBlur(img, (kernel_size, kernel_size), 0)
 
 ```
 
 3. The first core operation: detect edges of a gray model image
+
 ![alt text][image4]  
 
 ```
       def canny(img, low_threshold, high_threshold):
+      
        """Applies the Canny transform"""
+       
       return cv2.Canny(img, low_threshold, high_threshold)
 
 
@@ -179,7 +188,9 @@ Using the following image as example, my pipeline consisted of 6 steps.
       if len(img.shape) > 2:
           channel_count = img.shape[2]  # i.e. 3 or 4 depending on your image
           ignore_mask_color = (255,) * channel_count
+          
       else:
+      
           ignore_mask_color = 255
 
       #filling pixels inside the polygon defined by "vertices" with the fill color    
@@ -203,9 +214,13 @@ Using the following image as example, my pipeline consisted of 6 steps.
         
     Returns an image with hough lines drawn.
     """
+    
     lines = cv2.HoughLinesP(img, rho, theta, threshold, np.array([]), minLineLength=min_line_len, maxLineGap=max_line_gap)
+    
     line_img = np.zeros((img.shape[0], img.shape[1], 3), dtype=np.uint8)
+    
     draw_lines(line_img, lines)
+    
     return line_img
     
 ```
@@ -216,16 +231,14 @@ Using the following image as example, my pipeline consisted of 6 steps.
 ```
     def weighted_img(img, initial_img, α=0.8, β=1., γ=0.):
     """
+    
     `img` is the output of the hough_lines(), An image with lines drawn on it.
     Should be a blank image (all black) with lines drawn on it.
-    
-    `initial_img` should be the image before any processing.
-    
-    The result image is computed as follows:
     
     initial_img * α + img * β + γ
     NOTE: initial_img and img must be the same shape!
     """
+    
     return cv2.addWeighted(initial_img, α, img, β, γ)
     
 ```
