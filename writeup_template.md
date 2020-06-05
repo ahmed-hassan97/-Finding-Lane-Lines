@@ -162,13 +162,9 @@ Using the following image as example, my pipeline consisted of 6 steps.
 ![alt text][image4]  
 
 ```
-      def canny(img, low_threshold, high_threshold):
-      
-       """Applies the Canny transform"""
-       
-      return cv2.Canny(img, low_threshold, high_threshold)
-
-
+def canny(img, low_threshold, high_threshold):
+    """Applies the Canny transform"""
+    return cv2.Canny(img, low_threshold, high_threshold)
 ```
 
 4. After the edges have been got, my next step is to define a region of interest(i.e., ROI), this method is old but efficient. Cause the camere installed on the car is fixed, so the lane lines is in a specific region, usually a trapezoid.
