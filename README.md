@@ -27,20 +27,21 @@
 - [Test on videos](#Test on videos)
 - [Improved lane finding pipeline](#Improved lane finding pipeline)
 - [Reflection](#Reflection)
+
 ---
 
 ## Overview :point_left:
 
 In this project, I will use the tools about computer version to identify lane lines on the road.
 
-I will develop a pipeline on a series of individual images, and later apply the result to a video stream (really just a series
+I will develop a pipeline on a series of individual images, and later apply the result to a video stream
 
-ofimages).
 ---
 
 ## The project :ear:
 
 The goals / steps of this project are the following:
+
 * Make a pipeline that finds lane lines on the road
 * Improve this pipeline
 * Reflect on my work
@@ -67,11 +68,12 @@ This lab requires docker images:
 
 Some OpenCV functions I have used for this project are:
 
-cv2.inRange() for color selection  
-cv2.fillPoly() for regions selection  
-cv2.line() to draw lines on an image given endpoints  
-cv2.addWeighted() to coadd / overlay two images cv2.cvtColor() to grayscale or change color cv2.imwrite() to output images to file  
-cv2.bitwise_and() to apply a mask to an image  
+1- cv2.inRange() for color selection  
+2- cv2.fillPoly() for regions selection  
+3- cv2.line() to draw lines on an image given endpoints  
+4- cv2.addWeighted() to coadd / overlay two images cv2.cvtColor() to grayscale or change color 
+5- cv2.imwrite() to output images to file  
+6- cv2.bitwise_and() to apply a mask to an image  
 
 
 ---
