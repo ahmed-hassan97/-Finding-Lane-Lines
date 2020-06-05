@@ -84,7 +84,6 @@ Some OpenCV functions I have used for this project are:
 ## hyperparameters
 
 ```
-
       # Tunable parameters (I will use values from quizzes)
       kernel_size = 5       # Gaussian blur kernel size
       low_threshold = 40    # Canny low threshold for gradient value
@@ -116,6 +115,7 @@ Some OpenCV functions I have used for this project are:
       white_b2r_low = 0.95
       white_b2r_high = 1.05
 
+      
 ```
 
 
