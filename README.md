@@ -19,7 +19,7 @@
 ### Table of Contents
 
 
-- [Overview](#Overview)
+- Overview
 - [The project](#The project)
 - [Dependencies](#Dependencies)
 - [Ideas for Lane Detection Pipeline](#Ideas for Lane Detection Pipeline)
