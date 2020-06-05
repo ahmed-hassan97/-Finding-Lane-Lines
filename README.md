@@ -20,13 +20,13 @@
 
 
 - Overview
-- [The project](#The project)
-- [Dependencies](#Dependencies)
-- [Ideas for Lane Detection Pipeline](#Ideas for Lane Detection Pipeline)
-- [Build a Lane Finding Pipeline](#Build a Lane Finding Pipeline)
-- [Test on videos](#Test on videos)
-- [Improved lane finding pipeline](#Improved lane finding pipeline)
-- [Reflection](#Reflection)
+- The project
+- Dependencies
+- Ideas for Lane Detection Pipeline
+- Build a Lane Finding Pipeline
+- Test on videos
+- Improved lane finding pipeline
+- Reflection
 
 ---
 
