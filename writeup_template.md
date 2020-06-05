@@ -84,7 +84,7 @@ Some OpenCV functions I have used for this project are:
 ## hyperparameters
 
 ```
-      # Tunable parameters (I will use values from quizzes)
+    # Tunable parameters (I will use values from quizzes)
        kernel_size = 5       # Gaussian blur kernel size
       low_threshold = 40    # Canny low threshold for gradient value
       high_threshold = 130  # Canny high threshold for gradient value
@@ -132,7 +132,8 @@ Using the following image as example, my pipeline consisted of 6 steps.
 
 
 ```
-   def grayscale(img):
+ def grayscale(img):
+ 
         
   """Applies the Grayscale transform
   This will return an image with only one color channel
@@ -140,18 +141,19 @@ Using the following image as example, my pipeline consisted of 6 steps.
   (assuming your grayscaled image is called 'gray')
   you should call plt.imshow(gray, cmap='gray')"""
         
-  return cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+ return cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
    
 ```
 2. Use cv2.GaussianBlur() to blur the image
 ![alt text][image3]  
 
 ```
-      def gaussian_blur(img, kernel_size):
+     def gaussian_blur(img, kernel_size):
+     
       
       """Applies a Gaussian Noise kernel"""
       
-      return cv2.GaussianBlur(img, (kernel_size, kernel_size), 0)
+     return cv2.GaussianBlur(img, (kernel_size, kernel_size), 0)
 
 ```
 
